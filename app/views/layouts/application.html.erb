@@ -9,7 +9,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-turbolinks="false">
+  　　<header>
+        <div class="heading">
+           <h1 class="title">カレンダー</h1>
+        </div>
+        <div class="navbar">
+           <ul class="nav-lists">
+             <li><h3>新規登録</h3></li>
+             <li><h3>ログイン</h3></li>
+             <li><h3>ログアウト</h3></li>
+            </ul>
+        </div>
+      </header>
     <%= yield %>
   </body>
 </html>
