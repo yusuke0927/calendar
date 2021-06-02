@@ -82,3 +82,30 @@ div {
 label {
   display: block;
 }
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: lightblue;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0 0 0;
+}
+
+.nav-lists {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: lightblue;
+}

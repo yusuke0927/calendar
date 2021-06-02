@@ -9,7 +9,29 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-turbolinks="false">
+  　　<header>
+        <div class="heading">
+           <h1 class="title">
+              <%= link_to "カレンダー", root_path %>
+            </h1>
+        </div>
+        <div class="navbar">
+           <% if user_signed_in? %>
+               <ul class="nav-lists">
+                  <li><h3><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %></h3></li>
+                    <% else %>
+                  <li><h3><%= link_to "新規登録", new_user_registration_path, class: :nav__botn %></h3></li>
+                  <li><h3><%= link_to "ログイン", new_user_session_path, class: :nav__botn %></h3></li>
+                </ul>
+            <% end %>
+        </div>
+      </header>
     <%= yield %>
+    <footer>
+      <div class="now-timw">
+        <p id="RealtimeClockArea2"></p>
+      </div>
+    </footer>
   </body>
 </html>
