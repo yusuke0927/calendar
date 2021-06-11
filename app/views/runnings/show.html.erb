@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>メニュー:</strong>
   <%= @running.title %>
 </p>
 
 <p>
-  <strong>Start date:</strong>
+  <strong>開始時間:</strong>
   <%= @running.start_date %>
 </p>
 
 <p>
-  <strong>End date:</strong>
+  <strong>終了時間:</strong>
   <%= @running.end_date %>
 </p>
 
+<p>
+  <strong>体調:</strong>
+  <%= @running.condition.name %>
+</p>
+
+<p>
+  <strong>走行、歩行距離:</strong>
+  <%= @running.distance.name%>km
+</p>
 <%= link_to 'Edit', edit_running_path(@running) %> |
 <%= link_to 'Back', runnings_path %>

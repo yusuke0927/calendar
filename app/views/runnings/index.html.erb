@@ -22,8 +22,8 @@
     <table>
       <thead>
         <tr>
-          <th>予定</th>
-          <th>予定開始時間</th>
+          <th>メニュー</th>
+          <th>開始時間</th>
           <th>終了時間</th>
           <th>体調</th>
           <th>走行、歩行距離</th>
@@ -39,9 +39,9 @@
              <td><%= running.end_date %></td>
              <td><%= running.condition.name %></td>
              <td><%= running.distance.name %>(km)</td>
-             <td><%= link_to 'Show', running %></td>
-             <td><%= link_to 'Edit', edit_running_path(running) %></td>
-             <td><%= link_to 'Destroy', running, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             <td><%= link_to '編集', running %></td>
+             <td><%= link_to '詳細', edit_running_path(running) %></td>
+             <td><%= link_to '削除', running, method: :delete, data: { confirm: 'Are you sure?' } %></td>
            </tr>
          <% end %>
       </tbody>
@@ -52,9 +52,9 @@
 
     <footer>
       <h2>今月の走行距離は、</h2>
-        <% @runnings.each do |running| %>
-          <%= running.distance.name.inject(:+) %>
-        <% end %>
+         <% @runnings.each do |running| %>
+            <%= running.distance.name %>
+          <% end %>
       <h2>です。</h2>
     </footer>
 <% end %>
