@@ -27,7 +27,7 @@ class RunningsController < ApplicationController
 
     respond_to do |format|
       if @running.save
-        format.html { redirect_to @running, notice: "Running was successfully created." }
+        format.html { redirect_to runnings_path, notice: "Running was successfully created." }
         format.json { render :show, status: :created, location: @running }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,21 +39,21 @@ class RunningsController < ApplicationController
   # PATCH/PUT /events/1 or /events/1.json
   def update
     respond_to do |format|
-      if @event.update(event_params)
-        format.html { redirect_to @event, notice: "Event was successfully updated." }
-        format.json { render :show, status: :ok, location: @event }
+      if @running.update(running_params)
+        format.html { redirect_to @running, notice: "Running was successfully updated." }
+        format.json { render :show, status: :ok, location: @running }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+        format.json { render json: @running.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /events/1 or /events/1.json
   def destroy
-    @event.destroy
+    @running.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
+      format.html { redirect_to runnings_url, notice: "Running was successfully destroyed." }
       format.json { head :no_content }
     end
   end
