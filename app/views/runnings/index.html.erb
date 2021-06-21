@@ -39,9 +39,9 @@
              <td><%= running.end_date %></td>
              <td><%= running.condition.name %></td>
              <td><%= running.distance.name %>(km)</td>
-             <td><%= link_to '編集', running %></td>
-             <td><%= link_to '詳細', edit_running_path(running) %></td>
-             <td><%= link_to '削除', running, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             <td><%= link_to 'Show', running %></td>
+             <td><%= link_to 'Edit', edit_running_path(running) %></td>
+             <td><%= link_to 'Destroy', running, method: :delete, data: { confirm: 'Are you sure?' } %></td>
            </tr>
          <% end %>
       </tbody>
@@ -53,12 +53,10 @@
     <footer>
       <h2>今月の走行距離は、</h2>
          <% @runnings.each do |running| %>
-            <%= running.distance.name %>
+            <%= running.distance.name.all.sum %>
           <% end %>
       <h2>です。</h2>
     </footer>
-
-    
 <% end %>
 
 <br>
